@@ -64,8 +64,8 @@ void draw_box(int classId, float conf, int left, int top, int right, int bottom,
 	top = max(top, labelSize.height);
 
 	// rectangle(img, Rect, Scalar, thickness, lineType, shift)
-	// Rect : »ç°¢Çü ¹üÀ§ = (Point(x1, y1), Point(x2, y2))
-	// ¶Ç´Â Rect(x, y, w, h)
+	// Rect : ì‚¬ê°í˜• ë²”ìœ„ = (Point(x1, y1), Point(x2, y2))
+	// ë˜ëŠ” Rect(x, y, w, h)
 	rectangle(saveImg,
 		Point(left, top - round(1.5 * labelSize.height)),
 		Point(left + round(1.5 * labelSize.width), top + baseLine),
@@ -151,7 +151,7 @@ void remove_box(Mat frame, const vector<Mat>& outs, float conf_threshold, vector
 
 		vector<int> temp = { box.x, box.y, box.x + box.width, box.y + box.height };
 
-		//cout << "\nfor ³»ºÎ" << endl;
+		//cout << "\nfor ë‚´ë¶€" << endl;
 		//for (int j = 0; j < 4; j++)
 		//{
 		//	cout << temp[j] << ", ";
@@ -203,7 +203,7 @@ void detect_main(string img_name, vector<string>& result_label, vector<float>& r
 	vector<Mat> outs;
 	net.forward(outs, getOutputsNames(net));
 
-	// °á°ú ÀúÀåÇÒ vector
+	// ê²°ê³¼ ì €ì¥í•  vector
 	//cout << "-----BEFORE remove_box-------" << endl;
 	remove_box(img, outs, conf_threshold, classes, nms, result_label, result_conf, location);
 
