@@ -7,7 +7,7 @@ using namespace std;
 
 void main()
 {
-	string img_name = "test/dog.jpg";
+	string img_name = "{test image path}"     # ex) "test/dog.jpg";
 
 	vector<string> result_label;
 	vector<float> result_conf;
